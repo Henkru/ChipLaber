@@ -56,6 +56,9 @@ You can easy add your own chips. More exmaples in libs folder.
 }
 ```
 
+####Result
+![Result](https://raw.githubusercontent.com/Henkru/ChipLaber/master/example.png)
+
 ### Requirements
  * Python 3 (maybe works on 2.7)
  * [Pillow](http://pillow.readthedocs.org/en/latest/installation.html) 
