@@ -1,0 +1,14 @@
+{
+	"name" : "ATtiny45",
+	"type" : "DIP8",
+	"pins" : [
+			"PB5",
+			"PB3",
+			"PB4",
+			"GND",
+			"PB0",
+			"PB1",
+			"PB2",
+			"VCC"
+	]
+}
