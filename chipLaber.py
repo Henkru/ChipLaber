@@ -100,7 +100,7 @@ if __name__ == "__main__":
 
 	parser = argparse.ArgumentParser()
 	parser.add_argument("chip", help="Chip file", type=str)
-	parser.add_argument("-s", "--size", type=int, help="Font size", default=18)
+	parser.add_argument("-s", "--size", type=int, help="Font size", default=15)
 	parser.add_argument("-o", "--output", type=str, help="Output file", default=None)
 	parser.add_argument("-hide", "--hide", action="store_true", help="Hide chip name")
 
