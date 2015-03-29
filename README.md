@@ -1,6 +1,6 @@
 # ChipLaber
 
-This litle script make custom pinout labels for ICs.
+This litle script make custom pinout labels for ICs. Resolution: 1 pixel = 0.1 mm
 
 ###Usage
 
