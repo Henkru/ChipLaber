@@ -5,6 +5,7 @@ import json
 class PType(Enum):
 	DIP8 = (25.4, 76)
 	DIP32 = (25.4, 152)
+	SOIC = (12.7, 60)
 
 	@classmethod
 	def getType(cls, name):
@@ -12,6 +13,8 @@ class PType(Enum):
 			return PType.DIP8
 		elif name == "DIP32":
 			return PType.DIP32
+		elif name == "SOIC":
+			return PType.SOIC
 		else:
 			raise Exception("Unkown package type: %s" % name)
  
@@ -108,7 +111,7 @@ if __name__ == "__main__":
 		data = json.load(f)
 
 		pType = PType.getType(data['type'])
-		img = Chip(data['pins'], data['name'], pType)
+		img = Chip(data['pins'], data['name'], pType, args.size)
 		img.showName = not args.hide
 		img.generateImage()
 
