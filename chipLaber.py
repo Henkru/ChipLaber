@@ -17,7 +17,7 @@ class PType(Enum):
 			return PType.SOIC
 		else:
 			raise Exception("Unkown package type: %s" % name)
- 
+
 class Chip:
 	def __init__(self, pins=[], name="", pType=PType.DIP8, fontSize=15):
 		self.pins = pins
@@ -72,13 +72,13 @@ class Chip:
 
 		y = self.pitch * n if left else self.pitch * (len(self.pins) - n - 1)
 		y += self.space
-		
+
 		self.draw.text((x, y), text, font=self.font, fill=0)
 		if upperLine:
 			self.draw.line((x, y-2, x + textSize[0]-2, y-2), fill=0)
 
 	def drawName(self):
-		self.im = self.im.rotate(90)
+		self.im = self.im.rotate(90, expand=1)
 		self.draw = ImageDraw.Draw(self.im)
 
 		nameFont = ImageFont.truetype(self.fontPath, self.nameFontSize)
@@ -89,7 +89,7 @@ class Chip:
 
 		self.draw.text((x, y), self.name, font=nameFont, fill=0)
 
-		self.im = self.im.rotate(-90)
+		self.im = self.im.rotate(-90, expand=1)
 		self.draw = ImageDraw.Draw(self.im)
 
 	def save(self, name):
@@ -124,4 +124,3 @@ if __name__ == "__main__":
 		print("'%s' missing in chip file." % ex.args[0])
 	except Exception as ex:
 		print(ex)
-
